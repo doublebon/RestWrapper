@@ -13,5 +13,5 @@ Additional dependencies for run examples tests:
 - com.fasterxml.jackson.core (jackson-annotations)
 
 Files Path:
-- Examples: RestWrapper\src\test\java\samples\*
-- RestWrapper class path: RestWrapper\src\main\java\utils\RestWrapper.class
+- Examples: "RestWrapper\src\test\java\samples\*"
+- RestWrapper class path: "RestWrapper\src\main\java\utils\RestWrapper.class"
