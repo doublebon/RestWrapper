@@ -15,7 +15,7 @@
         <rest-assured.version>4.2.0</rest-assured.version>
         <projectlombok.version>1.18.12</projectlombok.version>
         <testng.version>6.14.3</testng.version>
-        <jackson-databind.version>2.9.8</jackson-databind.version>
+        <jackson-databind.version>2.9.10.5</jackson-databind.version>
     </properties>
 
     <build>
