@@ -1,5 +1,5 @@
 # RestWrapper
-Simple wrapper for Rest-Assured. Makes it easier to send requests and gain responses.
+Simple rest wrapper for Rest-Assured. Makes it easier to send requests and gain responses.
 
 Requirements:
 - Java 8+
