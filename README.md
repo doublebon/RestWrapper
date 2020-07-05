@@ -7,10 +7,10 @@ Requirements:
 Dependencies for RestWrapper.class:
 - io.rest-assured
 - org.projectlombok
+- com.fasterxml.jackson.core (jackson-databind)
 
 Additional dependencies for run examples tests:
 - org.testng
-- com.fasterxml.jackson.core (jackson-annotations)
 
 Files Path:
 - Examples: "RestWrapper\src\test\java\samples\"
