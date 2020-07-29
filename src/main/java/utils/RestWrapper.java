@@ -108,9 +108,12 @@ public class RestWrapper {
     private static RequestSpecification getSpecsByBaseEndPoint(String baseEndPoint) {
         return new RequestSpecBuilder()
                 .setContentType(ContentType.JSON)
-                .setConfig(RestAssuredConfig.config().logConfig(LogConfig.logConfig().defaultStream(new ToLoggerPrintStream().getPrintStream())))
-                .log(LogDetail.ALL)
+                .log(LogDetail.METHOD)
+                .log(LogDetail.URI)
+                .log(LogDetail.HEADERS)
+                .log(LogDetail.BODY)
                 .setBaseUri(baseEndPoint)
+                .setRelaxedHTTPSValidation()
                 .build();
     }
 
