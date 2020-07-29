@@ -15,4 +15,3 @@ Additional dependencies for run examples tests:
 Files Path:
 - Examples: "RestWrapper\src\test\java\samples\"
 - RestWrapper class path: "RestWrapper\src\main\java\utils\RestWrapper.class"
-- Custom logger for RestWrapper: "RestWrapper\src\main\java\utils\ToLoggerPrintStream.class"
