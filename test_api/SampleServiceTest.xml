@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="SampleSuit" parallel="false" configfailurepolicy="continue" skipfailedinvocationcounts="false">
+
+    <test name="SampleTests" parallel="false">
+        <classes>
+            <class name="functional.samples.SampleTest"/>
+        </classes>
+    </test>
+
+</suite>

@@ -1,14 +1,12 @@
 package mapping;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.Getter;
 
 @Getter
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class RespHeaders {
+public class Headers {
     @JsonProperty("X-Cloud-Trace-Context")
     private String xCloudTraceContext;
     @JsonProperty("Accept")
@@ -27,6 +25,4 @@ public class RespHeaders {
     private String myHeader1;
     @JsonProperty("MyHeader2")
     private String myHeader2;
-
-
 }
