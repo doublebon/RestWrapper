@@ -20,7 +20,6 @@ import java.util.function.BiFunction;
 
 import static io.restassured.RestAssured.given;
 
-@Log4j
 @Builder
 public class RestWrapper {
 
