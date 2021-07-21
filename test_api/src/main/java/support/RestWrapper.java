@@ -137,6 +137,8 @@ public class RestWrapper {
      * дабы меньше было хлама, вставлять надо в функции типа "send"
      * .spec(getSpecsByBaseEndPoint(EndPoints.baseSessionPath)) <- В параметр бросаешь БАЗОВЫЙ адрес
      * перед этим новый адрес добавляешь в EndPoint
+     *
+     * Use as specs generator
      * */
     private static RequestSpecification getSpecsByBaseEndPoint(String baseEndPoint) {
         return new RequestSpecBuilder()
@@ -149,28 +151,36 @@ public class RestWrapper {
                 .build();
     }
 
-    //Для быстрого создания однострочного json, чтобы не плодить 1000 классов - оберток
+    /**
+     * RU Для быстрого создания однострочного json, чтобы не плодить 1000 классов - оберток
+     * EN For fast create one field json body
+     */
     public static String oneFieldJson(String field, String value) {
         BiFunction<String, String, String> fastJson = (f, v) -> String.format("{\"%s\":\"%s\"}", field, value);
         return fastJson.apply(field, value);
     }
 
-    /* (работает только с RestAssured)
-     * Парсит json ответа в класс типа type
+    /* (работает только с RestAssured) | works with RestAssured
+     * RU Парсит json ответа в класс типа type
+     * EN Parse json response in to class with selected type
      *
-     * Пример:
-     * RespAuthUser re = RestWrapper.parse(*ответ от рест ашура*, *В какой класс распарсить* прим. RespAuthUser.class);
+     * Пример (Example):
+     * RespAuthUser re = RestWrapper.parse(*ответ от рест ашура*, *В какой класс распарсить* прим. Headers.class);
+     * RespAuthUser re = RestWrapper.parse(*ValidatableResponse*, *Parse in class type* example. Headers.class);
      * */
     public static <T> T parse(ValidatableResponse response, Type type) {
         return response.statusCode(200).extract().body().as(type);
     }
 
+    /**
+     * Parse value from response by node name without mapping
+     */
     public static <T> T parseOneField(ValidatableResponse response, String nodeName) {
         return response.statusCode(200).extract().jsonPath().get(nodeName);
     }
 
     /* (работает только с RestAssured)
-     * Используется для json ответа вида:
+     * Используется для json ответа вида (for responses as):
      * [
      *  { field:value }, { field2:value2 }...
      * ]
